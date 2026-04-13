@@ -19,10 +19,8 @@
       background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
       color: #ffffff;
       overflow-x: hidden;
-      margin: 0;
     }
 
-    /* Contenedor principal */
     .container {
       position: relative;
       z-index: 1;
@@ -30,7 +28,6 @@
       display: grid;
       place-items: center;
       padding: 32px 16px;
-      box-sizing: border-box;
     }
 
     .card {
@@ -43,7 +40,6 @@
       margin-inline: auto;
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
       color: #ffffff;
-      box-sizing: border-box;
     }
 
     h1 {
@@ -56,7 +52,6 @@
     p {
       font-size: 1.05rem;
       line-height: 1.8;
-      text-align: left;
     }
 
     .firma {
@@ -69,16 +64,12 @@
       margin: 18px 0;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: #ffffff;
       border-left: 3px solid rgba(255,255,255,0.5);
       padding-left: 14px;
     }
 
     .carta {
       margin-top: 22px;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
     }
 
     .carta-btn {
@@ -91,8 +82,6 @@
       font-size: 1.05rem;
       cursor: pointer;
       text-align: left;
-      box-sizing: border-box;
-      transition: background 0.3s ease;
     }
 
     .carta-btn:hover {
@@ -102,35 +91,8 @@
     .carta-contenido {
       max-height: 0;
       overflow-y: auto;
-      transition: max-height 0.45s ease, opacity 0.45s ease;
+      transition: 0.45s;
       opacity: 0;
-      padding: 0 4px;
-      color: #ffffff;
-      box-sizing: border-box;
-    }
-
-    .carta.active .carta-contenido {
-      max-height: 65vh;
-      opacity: 1;
-      margin-top: 14px;
-    }
-
-    .carta.active .carta-contenido {
-      max-height: 65vh;
-      opacity: 1;
-      margin-top: 16px;
-    }
-
-    .carta.active .carta-contenido {
-      max-height: 60vh;
-      opacity: 1;
-      margin-top: 15px;
-    }
-
-    .carta.active .carta-contenido {
-      max-height: 60vh;
-      opacity: 1;
-      margin-top: 15px;
     }
 
     .carta.active .carta-contenido {
@@ -139,27 +101,11 @@
       margin-top: 15px;
     }
 
-    /* Animación de entrada */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Nieve */
     .snow {
       position: fixed;
       inset: 0;
-      width: 100vw;
-      height: 100vh;
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
     }
 
     .snow span {
@@ -169,7 +115,6 @@
       height: 8px;
       background: white;
       border-radius: 50%;
-      opacity: 0.8;
       animation: fall linear infinite;
     }
 
@@ -179,7 +124,6 @@
       }
     }
 
-    /* Galería */
     .galeria {
       display: flex;
       gap: 15px;
@@ -194,96 +138,31 @@
       object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .card {
-        padding: 25px;
-      }
-      .galeria img {
-        width: 120px;
-        height: 170px;
-      }
-    }
-      .card {
-        padding: 25px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Nieve -->
   <div class="snow">
-    <span style="left:5%; animation-duration:10s; animation-delay:0s"></span>
-    <span style="left:15%; animation-duration:12s; animation-delay:2s"></span>
-    <span style="left:25%; animation-duration:9s; animation-delay:1s"></span>
-    <span style="left:35%; animation-duration:11s; animation-delay:3s"></span>
-    <span style="left:45%; animation-duration:13s; animation-delay:0s"></span>
-    <span style="left:55%; animation-duration:10s; animation-delay:2s"></span>
-    <span style="left:65%; animation-duration:14s; animation-delay:1s"></span>
-    <span style="left:75%; animation-duration:9s; animation-delay:4s"></span>
-    <span style="left:85%; animation-duration:12s; animation-delay:0s"></span>
-    <span style="left:95%; animation-duration:11s; animation-delay:3s"></span>
+    <span style="left:5%; animation-duration:10s;"></span>
+    <span style="left:15%; animation-duration:12s;"></span>
+    <span style="left:25%; animation-duration:9s;"></span>
   </div>
 
-  <!-- Contenido -->
   <div class="container">
     <div class="card">
-      <!-- TEXTO PERSONALIZABLE 1 -->
+
       <p class="editable">
         te amo demasiado mi pequeña bot
       </p>
+
       <h1>Para ti la persona mas importante en mi vida💙</h1>
-
-      <div class="carta">
-        <button class="carta-btn">📩 Abrir carta</button>
-        <div class="carta-contenido">
-          <p>
-            No sé en qué momento exacto pasó,
-            pero tu presencia empezó a sentirse como hogar.
-            Como ese lugar al que el corazón vuelve sin pensarlo,
-            donde todo es más simple y sincero.
-          </p>
-
-          <p>
-            No es solo lo que dices, es cómo existes:
-            la forma en que iluminas lo cotidiano,
-            la calma que traes incluso en el caos.
-            Y aunque no siempre lo diga,
-            tu lugar en mi vida es profundo y verdadero.
-          </p>
-
-          <p class="editable">
-            (Aquí puedes escribir tu parte más personal, como si fuera una carta real)
-          </p>
-        </div>
-      </div>
 
       <p>
         No sé en qué momento exacto pasó,
-        pero tu presencia empezó a sentirse como hogar.
-        Como ese lugar al que el corazón vuelve sin pensarlo,
-        donde todo es más simple y sincero.
-        <br><br>
-        No es solo lo que dices, es cómo existes:
-        la forma en que iluminas lo cotidiano,
-        la calma que traes incluso en el caos.
-        Y aunque no siempre lo diga,
-        tu lugar en mi vida es profundo y verdadero.
+        pero tu presencia empezó a sentirse como hogar...
       </p>
 
-      <!-- TEXTO PERSONALIZABLE 2 -->
       <p class="editable">
         (Aquí puedes escribir un recuerdo, una fecha especial o algo que le quieras decir)
       </p>
@@ -291,43 +170,31 @@
       <div class="carta">
         <button class="carta-btn">📷 Ver recuerdos</button>
         <div class="carta-contenido">
-          <p class="editable">(Escribe aquí el recuerdo que acompaña estas fotos)</p>
           <div class="galeria">
-        <img src="foto1.jpg" alt="Recuerdo 1">
-        <img src="foto2.jpg" alt="Recuerdo 2">
-        <img src="foto3.jpg" alt="Recuerdo 3">
-      </div>
-
-      <!-- TEXTO PERSONALIZABLE 3 -->
-      <p class="editable">
-        (Último mensaje personal, promesa, dedicatoria o pensamiento)
-      </p>
-
-            </div>
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <img src="foto3.jpg">
+          </div>
         </div>
       </div>
 
       <div class="carta">
         <button class="carta-btn">💌 Últimas palabras</button>
         <div class="carta-contenido">
-          <p class="editable">
-            te quiero, te aprecio y te amo pq eres la mejor y la mas importante persona en mi vida, no te cambiaria por nd, eres la mejor.
+          <p>
+            te quiero, te aprecio y te amo pq eres la mejor...
           </p>
         </div>
       </div>
 
       <p class="firma">— Siempre a tu lado 🤍</p>
+
     </div>
   </div>
 
   <script>
-    const cartas = document.querySelectorAll('.carta');
-
-    cartas.forEach(carta => {
-      const btn = carta.querySelector('.carta-btn');
-      btn.addEventListener('click', () => {
-        carta.classList.toggle('active');
-      });
+    document.querySelectorAll('.carta-btn').forEach(btn => {
+      btn.onclick = () => btn.parentElement.classList.toggle('active');
     });
   </script>
 
