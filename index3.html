@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una carta para ti ✨</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(to bottom,#0f172a,#1e3a8a,#60a5fa);
+    color:white;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:30px 20px;
+    position:relative;
+}
+
+.contenedor{
+    max-width:850px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    text-align:center;
+    font-size:clamp(2rem,8vw,4rem);
+    margin-bottom:30px;
+    text-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.carta{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 25px rgba(255,255,255,.1);
+}
+
+p{
+    font-size:1.15rem;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    background:white;
+    color:#1e3a8a;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.snowflake{
+    position:fixed;
+    top:-10px;
+    color:white;
+    pointer-events:none;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<70;i++){
+    let snow=document.createElement("div");
+    snow.className="snowflake";
+    snow.innerHTML="❄";
+    snow.style.left=Math.random()*window.innerWidth+"px";
+    snow.style.fontSize=(Math.random()*20+10)+"px";
+    snow.style.animationDuration=(Math.random()*5+5)+"s";
+    snow.style.opacity=Math.random();
+    document.body.appendChild(snow);
+}
+</script>
+
+<div class="contenedor">
+
+    <h1>✨ Una carta para ti ✨</h1>
+
+    <div class="carta">
+
+        <p>
+            Si estás leyendo esto, quiero que que sepas que 
+            eres capaz de lograr muchas cosas que pienses hacer amorcita. A veces hay 
+            obstáculos, momentos difíciles o problemas que parecen
+            imposibles de superar, pero cada uno de esos desafíos te fortalecen princesa.
+        </p>
+
+        <p>
+            No te desanimes cuando las cosas no salgan como querias.
+            Nadie es capaz de no caer nunca levantate cada vez que sea
+            necesario. Cada intento te hace más fuerte, inteligente y capaz de sobresalir.
+        </p>
+
+        <p>
+            Creo en ti preciosa,creo que eres capaz de lograr todo lo que quieres si te lo propones.
+            Estare siempre a tu lado apoyandote,demostrandote lo perfecta que eres ayudandote como 
+            pueda a mejorar porque quiero verte feliz y si mejorar te hace feliz te ayudare en eso
+            no importan los malos momentos,importa como tienes la capacidad de sobresalir esos problemas
+            y eso es algo que admiro de ti mi amor, eres especial para mi y recuerda que tras todo problema
+            que tengamos igual estare para ti quiero que logres tus metas y quiero ser parte de tus metas tambien
+            yo se que lograras todo lo que quieras,te amo mi amor,y te amo mas de lo que puedes imaginar,voy a estar
+            a tu lado siempre.
+        </p>
+
+        <h1>Te amoooooooooooo💙</h1>
+
+        <center>
+            <a href="índice.html" class="btn">pagina principal</a>
+        </center>
+
+    </div>
+
+</div>
+
+</body>
+</html>
