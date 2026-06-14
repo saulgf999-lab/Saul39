@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti mi amor🤍</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Arial', sans-serif;
+    background:linear-gradient(to bottom, #071a3d, #0d2b66);
+    color:white;
+    text-align:center;
+}
+
+.contenido{
+    z-index:10;
+    max-width:700px;
+    padding:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.7;
+}
+
+.particula{
+    position:absolute;
+    top:-50px;
+    color:white;
+    pointer-events:none;
+    user-select:none;
+    animation:caer linear infinite;
+}
+
+@keyframes caer{
+    from{
+        transform:translateY(-50px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="contenido">
+    <h1>❤️ Para Ti amorcita ❤️</h1>
+
+    <p>
+        Entre miles de momentos, tú eres mi favorito.
+        Cada instante contigo es único,
+        y como un corazón que nunca deja de latir,
+        mi cariño por ti permanece siempre.
+        Gracias por iluminar mis días con tu sonrisa.
+        Gracias por darme tu cariño cuando lo necesito.
+        Gracias por todo lo que haces por mi.
+        Te amo muchisimo amor.
+    </p>
+</div>
+
+<script>
+function crearParticula(){
+
+    const elemento = document.createElement("div");
+    elemento.classList.add("particula");
+
+    elemento.textContent =
+        Math.random() > 0.5 ? "🤍" : "❄️";
+
+    elemento.style.left = Math.random()*100 + "vw";
+    elemento.style.fontSize = (15 + Math.random()*25) + "px";
+    elemento.style.opacity = 0.5 + Math.random()*0.5;
+    elemento.style.animationDuration =
+        (6 + Math.random()*8) + "s";
+
+    document.body.appendChild(elemento);
+
+    setTimeout(()=>{
+        elemento.remove();
+    },14000);
+}
+
+setInterval(crearParticula, 250);
+</script>
+
+</body>
+</html>
