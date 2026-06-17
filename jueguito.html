@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ale ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:pink;
+    font-family:Arial;
+}
+
+#jugador{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background:red;
+    bottom:20px;
+    left:50%;
+}
+
+.corazon{
+    position:absolute;
+    font-size:30px;
+}
+</style>
+</head>
+<body>
+
+<h2>Puntos: <span id="puntos">0</span>/20 ❤️</h2>
+
+<div id="jugador"></div>
+
+<script>
+
+let jugador = document.getElementById("jugador");
+let puntos = 0;
+let x = window.innerWidth / 2;
+
+document.addEventListener("keydown", e => {
+
+    if(e.key==="ArrowLeft"){
+        x -= 20;
+    }
+
+    if(e.key==="ArrowRight"){
+        x += 20;
+    }
+
+    jugador.style.left = x + "px";
+});
+
+function crearCorazon(){
+
+    let c = document.createElement("div");
+    c.className="corazon";
+    c.innerHTML="❤️";
+
+    c.style.left=Math.random()*window.innerWidth+"px";
+    c.style.top="0px";
+
+    document.body.appendChild(c);
+
+    let y=0;
+
+    let mover=setInterval(()=>{
+
+        y+=5;
+        c.style.top=y+"px";
+
+        let cx=c.offsetLeft;
+        let cy=c.offsetTop;
+
+        let jx=jugador.offsetLeft;
+
+        if(
+            cy>window.innerHeight-80 &&
+            cx>jx-30 &&
+            cx<jx+50
+        ){
+            puntos++;
+            document.getElementById("puntos").textContent=puntos;
+
+            c.remove();
+            clearInterval(mover);
+
+            if(puntos>=20){
+                alert("💖 TE AMO ALE ❤️ 💖");
+            }
+        }
+
+        if(y>window.innerHeight){
+            c.remove();
+            clearInterval(mover);
+        }
+
+    },30);
+}
+
+setInterval(crearCorazon,1000);
+
+</script>
+
+</body>
+</html>
